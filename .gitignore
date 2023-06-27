@@ -7,7 +7,6 @@
 *.d
 /.vscode
 main.c
-_putchar.c
 
 # Object files
 *.o
