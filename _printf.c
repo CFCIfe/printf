@@ -1,4 +1,3 @@
-#include <stddef.h>
 #include "main.h"
 
 /**
@@ -7,11 +6,12 @@
  *
  * Return: The number of characters printed.
  */
-
 int _printf(const char *format, ...)
 {
 va_list args;
 int count = 0;
+char c;
+char *str;
 
 va_start(args, format);
 
@@ -22,8 +22,23 @@ if (*format == '%')
 format++;
 switch (*format)
 {
+case 'c':
+c = (char)va_arg(args, int);
+_putchar(c);
+count++;
+break;
+case 's':
+str = va_arg(args, char *);
+while (*str)
+{
+_putchar(*str);
+str++;
+count++;
+}
+break;
 case '%':
-count += print_percent(args);
+_putchar('%');
+count++;
 break;
 default:
 _putchar('%');
