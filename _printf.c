@@ -1,6 +1,13 @@
 #include <stddef.h>
 #include "main.h"
 
+/**
+ * _printf - Prints output according to a format.
+ * @format: The format string.
+ *
+ * Return: The number of characters printed.
+ */
+
 int _printf(const char *format, ...)
 {
 va_list args;
@@ -35,5 +42,5 @@ format++;
 
 va_end(args);
 
-return count;
+return (count);
 }
