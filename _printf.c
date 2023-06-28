@@ -8,6 +8,9 @@
  */
 void print_character(char ch, int *count)
 {
+if (ch == '\0')
+return;
+
 _putchar(ch);
 (*count)++;
 }
@@ -26,8 +29,7 @@ str = "(null)";
 
 while (str[i])
 {
-_putchar(str[i]);
-(*count)++;
+print_character(str[i], count);
 i++;
 }
 }
