@@ -25,11 +25,25 @@ void print_string(char *str, int *count)
 int i = 0;
 
 if (str == NULL)
-str = "(null)";
+{
+print_string("(null)", count);
+return;
+}
 
 while (str[i])
 {
-print_character(str[i], count);
+if (str[i] == '\0')
+return;
+
+_putchar(str[i]);
+(*count)++;
+
+if (str[i] == '\n')
+{
+_putchar('\r');
+(*count)++;
+}
+
 i++;
 }
 }
